@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Console Module """
 import cmd
-from shlex import shlex
+import shlex
 import sys
 from models.base_model import BaseModel
 from models.__init__ import storage
