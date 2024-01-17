@@ -20,7 +20,7 @@ place_amenity = Table(
         ForeignKey("amenities.id"),
         nullable=False))
 
-class Place(BaseModel):
+class Place(BaseModel, Base):
     """ A place to stay """
     __tablename__ = "places"
     city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)
