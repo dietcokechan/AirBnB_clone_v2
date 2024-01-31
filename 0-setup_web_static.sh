@@ -6,9 +6,8 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 
 # create folders if they don't already exist
-if [ ! -d /data/web_static/releases/test/ ] then
-  sudo mkdir -p /data/web_static/releases/test/
-fi
+sudo mkdir -p /data/web_static/releases/test/
+sudo mkdir -p /data/web_static/shared/
 
 # create fake html file
 echo "Hello World!" > /data/web_static/releases/test/index.html
@@ -28,12 +27,12 @@ printf %s "server {
     index  index.html index.htm;
 
     location /hbnb_static {
-	alias /data/web_static/current;
-	index index.html index.htm;
+    alias /data/web_static/current;
+    index index.html index.htm;
     }
 
     location /redirect_me {
-	return 301 http://youtube.com/;
+    return 301 http://google.com/;
     }
 
     error_page 404 /404.html;
