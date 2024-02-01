@@ -13,7 +13,13 @@ sudo mkdir -p /data/web_static/releases/
 sudo mkdir -p /data/web_static/releases/test/
 
 # create fake html file
-echo "Hello World!" > /data/web_static/releases/test/index.html
+sudo echo -e "<html>
+<head>
+  </head>
+  <body>
+    Holberton School
+  </body>
+</html>" | sudo tee /data/web_static/releases/test/index.html
 
 # create symbolic link
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
