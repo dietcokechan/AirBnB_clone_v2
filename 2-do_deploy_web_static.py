@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""compress before sending"""
+"""deploy archive"""
 import os
 import tarfile
 from datetime import datetime
@@ -9,6 +9,7 @@ from fabric.api import local, env, run, put
 env.hosts = ['54.237.18.57', '54.234.41.234']
 env.user = 'ubuntu'
 env.key_filename = '~/.ssh/id.rsa'
+
 
 def do_pack():
     """generate .tgz archive from folder content"""
@@ -25,6 +26,7 @@ def do_pack():
     if local("tar -cvzf {} web_static".format(file)).failed is True:
         return None
     return file
+
 
 def do_deploy(archive_path):
     f = archive_path.split('/')[1]
