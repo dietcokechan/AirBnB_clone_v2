@@ -29,6 +29,7 @@ def do_pack():
 
 
 def do_deploy(archive_path):
+    """deplooooooooy"""
     f = archive_path.split('/')[1]
     try:
         put(archive_path, '/tmp/{}'.format(f))
