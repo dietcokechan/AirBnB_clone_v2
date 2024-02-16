@@ -9,13 +9,13 @@ app = Flask(__name__)
 
 @app.route("/states")
 def get_states_list():
-    return render_template("8-cities_by_states.html", storage=storage.all('State'))
+    return render_template("9-states.html", storage=storage.all('State'), obj=None)
 
 
 @app.route("/states/<id>")
 def get_cities(id):
     obj = storage.all('State').get('State.{}'.format(id))
-    return render_template("8-cities_by_states.html", storage=storage.all('State'), obj=obj)
+    return render_template("9-states.html", storage=None, obj=obj)
 
 
 @app.teardown_appcontext
