@@ -28,9 +28,11 @@ def python_is(text="is cool"):
     res = text.replace("_", " ")
     return f"Python {res}"
 
+
 @app.route("/number/<int:n>")
 def disp_number(n):
     return f"{n} is a number"
+
 
 if __name__ == '__main__':
     app.url_map.strict_slashes = False

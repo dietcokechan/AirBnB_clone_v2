@@ -15,10 +15,12 @@ def index():
 def hbnb():
     return "HBNB"
 
+
 @app.route("/c/<text>")
 def c_is(text):
     res = text.replace("_", " ")
     return f"C {res}"
+
 
 if __name__ == '__main__':
     app.url_map.strict_slashes = False

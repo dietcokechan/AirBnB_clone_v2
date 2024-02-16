@@ -34,9 +34,11 @@ def python_is(text="is cool"):
 def disp_number(n):
     return f"{n} is a number"
 
+
 @app.route("/number_template/<int:n>")
 def disp_html(n):
     return render_template("5-number.html", n=n)
+
 
 if __name__ == '__main__':
     app.url_map.strict_slashes = False
