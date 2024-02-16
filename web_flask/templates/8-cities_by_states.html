@@ -11,8 +11,8 @@
         {% for state in storage.values()|sort(attribute="name") %}
         <LI>{{ state.id }}: <B>{{ state.name }}</B>
         <UL>
-            {% for city in storage.cities|sort(attribute="name") %}
-            <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
+            {% for city in state.cities|sort(attribute="name") %}
+                <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
             {% endfor %}
         </UL>
         </LI>

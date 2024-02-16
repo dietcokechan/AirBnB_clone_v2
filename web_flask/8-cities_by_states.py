@@ -14,7 +14,7 @@ def get_states_list():
 
 @app.route("/cities_by_states")
 def get_cities():
-    return render_template("8-cities_by_states.html", storage=storage.all('City'))
+    return render_template("8-cities_by_states.html", storage=storage.all('State'))
 
 
 @app.teardown_appcontext
